@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ action }} Teacher{% endblock %}
+{% block heading %}{{ action }} Teacher 🍎{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">{{ action }} Teacher</h2>
+<form method="post" class="border p-4 bg-light rounded">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">{{ action }}</button>
+    <a href="{% url 'teacher_list' %}" class="btn btn-secondary">Back to Teacher List</a>
+</form>
+{% endblock %}
